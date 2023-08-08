@@ -1,6 +1,7 @@
 .venv/
-nnUnet_raw/
-nnUnet_preprocessed/
-nnUnet_results/
+nnUNet_raw/
+nnUNet_preprocessed/
+nnUNet_results/
 output/
 Prostate158/
+data/
