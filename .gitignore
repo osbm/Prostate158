@@ -5,3 +5,6 @@ nnUNet_results/
 output/
 Prostate158/
 data/
+all_to_anatomy
+nnunet_raw_folders/
+t2_to_anatomy
