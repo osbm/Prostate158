@@ -97,27 +97,27 @@ if __name__ == "__main__":
     train_df = pd.concat([train_df, valid_df], ignore_index=True)
     # iterate the dataframe rows
     for case_row in tqdm(train_df.to_dict(orient="records")):
-        create_mask(case_row, target_folder=TRAIN_LABELs_DIR, add_tumor_mask=True)
-        create_channels(case_row, target_folder=TRAIN_IMAGEs_DIR, add_adc=True, add_dwi=True)
+        create_mask(case_row, target_folder=TRAIN_LABELs_DIR, add_tumor_mask=False)
+        create_channels(case_row, target_folder=TRAIN_IMAGEs_DIR, add_adc=False, add_dwi=False)
 
     for case_row in tqdm(test_df.to_dict(orient="records")):
-        create_mask(case_row, target_folder=TEST_LABELs_DIR, add_tumor_mask=True)
-        create_channels(case_row, target_folder=TEST_IMAGEs_DIR, add_adc=True, add_dwi=True)
+        create_mask(case_row, target_folder=TEST_LABELs_DIR, add_tumor_mask=False)
+        create_channels(case_row, target_folder=TEST_IMAGEs_DIR, add_adc=False, add_dwi=False)
 
     dataset_json = {
         "name": "Prostate158",
         "description": "Prostate cancer segmentation dataset",
         "channel_names": {
             "0": "T2",
-            "1": "ADC",
-            "2": "DWI"
+            # "1": "ADC",
+            # "2": "DWI"
         },
         "labels": {
             "background": 0,
             # "tumor": 1,
             "prostate_inner": 1,
             "prostate_outer": 2,
-            "tumor": 3,
+            # "tumor": 3,
         },
         "numTraining": train_df.shape[0],
         "numTest": test_df.shape[0],
