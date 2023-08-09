@@ -4,3 +4,8 @@ matplotlib
 seaborn
 nibabel
 tqdm
+jupyter
+ipython
+nnunetv2
+datasets
+huggingface_hub
